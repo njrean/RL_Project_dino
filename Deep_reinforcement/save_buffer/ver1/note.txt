@@ -1,0 +1,20 @@
+image
+
+	image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #RGB to Grey Scale leave only 1 channel
+
+	image = image[80:, :300] #Crop
+	image_border = cv2.copyMakeBorder(
+                    image,
+                    top=100,
+                    bottom=120,
+                    left=0,
+                    right=0,
+                    borderType=cv2.BORDER_CONSTANT,
+                    value=[0, 0, 0]
+                )
+
+	image_border = cv2.resize(image_border, (80,80))
+
+set up
+no epsilon decay
+EPSILON = 0.2
